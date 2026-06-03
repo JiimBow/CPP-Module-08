@@ -6,7 +6,7 @@
 /*   By: jodone <jodone@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 10:35:38 by jodone            #+#    #+#             */
-/*   Updated: 2026/05/27 10:40:25 by jodone           ###   ########.fr       */
+/*   Updated: 2026/06/03 15:22:08 by jodone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,31 +52,31 @@ int main()
 
 	std::list<int> lst;
 
-    lst.push_back(5);
-    lst.push_back(17);
+	lst.push_back(5);
+	lst.push_back(17);
 
-    std::cout << lst.back() << std::endl;
+	std::cout << lst.back() << std::endl;
 
-    lst.pop_back();
+	lst.pop_back();
 
-    std::cout << lst.size() << std::endl;
+	std::cout << lst.size() << std::endl;
 
-    lst.push_back(3);
-    lst.push_back(5);
-    lst.push_back(737);
-    lst.push_back(0);
+	lst.push_back(3);
+	lst.push_back(5);
+	lst.push_back(737);
+	lst.push_back(0);
 
-    std::list<int>::iterator it2 = lst.begin();
-    std::list<int>::iterator ite2 = lst.end();
+	std::list<int>::iterator it2 = lst.begin();
+	std::list<int>::iterator ite2 = lst.end();
 
-    ++it2;
-    --it2;
+	++it2;
+	--it2;
 
-    while (it2 != ite2)
-    {
-        std::cout << *it2 << std::endl;
-        ++it2;
-    }
+	while (it2 != ite2)
+	{
+		std::cout << *it2 << std::endl;
+		++it2;
+	}
 
 	return 0;
 }
