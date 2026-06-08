@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jodone <jodone@student.42angouleme.fr>     +#+  +:+       +#+        */
+/*   By: jimbow <jimbow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 10:35:38 by jodone            #+#    #+#             */
-/*   Updated: 2026/06/03 15:22:08 by jodone           ###   ########.fr       */
+/*   Updated: 2026/06/08 12:49:30 by jimbow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	std::cout << "=== test stack===" << std::endl << std::endl;
+	std::cout << "=== Test stack===" << std::endl << std::endl;
 
 	MutantStack<int> mstack;
 
@@ -48,7 +48,7 @@ int main()
 	
 	std::stack<int> s(mstack);
 
-	std::cout << std::endl << "=== test list===" << std::endl << std::endl;
+	std::cout << std::endl << "=== Test list===" << std::endl << std::endl;
 
 	std::list<int> lst;
 
@@ -76,6 +76,22 @@ int main()
 	{
 		std::cout << *it2 << std::endl;
 		++it2;
+	}
+
+	std::cout << std::endl << "=== Const test ===" << std::endl << std::endl;
+
+	const MutantStack<int> constStack(mstack);
+
+	std::cout << constStack.top() << std::endl;
+	std::cout << constStack.size() << std::endl;
+
+	MutantStack<int>::const_iterator cit = constStack.begin();
+	MutantStack<int>::const_iterator cite = constStack.end();
+
+	while (cit != cite)
+	{
+		std::cout << *cit << std::endl;
+		++cit;
 	}
 
 	return 0;
