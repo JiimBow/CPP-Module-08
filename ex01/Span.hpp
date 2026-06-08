@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jodone <jodone@student.42angouleme.fr>     +#+  +:+       +#+        */
+/*   By: jimbow <jimbow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 13:52:23 by jodone            #+#    #+#             */
-/*   Updated: 2026/05/26 17:09:03 by jodone           ###   ########.fr       */
+/*   Updated: 2026/06/08 12:30:17 by jimbow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,10 @@ public:
 	template <typename It>
 	void addMoreNumbers(It begin, It end)
 	{
-		while (begin != end)
-		{
-			if (_numbers.size() >= _maxSize)
-				throw std::runtime_error("Span is full");
-			
-			_numbers.push_back(*begin);
-			++begin;
-		}
+		if (_numbers.size() + std::distance(begin, end) > _maxSize)
+			throw std::runtime_error("Not enough space in span");
+
+		_numbers.insert(_numbers.end(), begin, end);
 	}
 };
 

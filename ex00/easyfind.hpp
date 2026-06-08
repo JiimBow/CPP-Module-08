@@ -6,7 +6,7 @@
 /*   By: jimbow <jimbow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:50:44 by jodone            #+#    #+#             */
-/*   Updated: 2026/06/08 12:19:20 by jimbow           ###   ########.fr       */
+/*   Updated: 2026/06/08 12:22:33 by jimbow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define EASYFIND_HPP
 
 #include <algorithm>
-#include <exception>
 #include <stdexcept>
 
 template <typename T>
