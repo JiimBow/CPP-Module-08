@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jodone <jodone@student.42angouleme.fr>     +#+  +:+       +#+        */
+/*   By: jimbow <jimbow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:50:35 by jodone            #+#    #+#             */
-/*   Updated: 2026/05/26 13:35:49 by jodone           ###   ########.fr       */
+/*   Updated: 2026/06/08 12:19:04 by jimbow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,25 @@ int	main()
 	v.push_back(9);
 	v.push_back(2);
 
-	std::vector<int>::iterator it = easyfind(v, 6);
-	if (it != v.end())
+	try
+	{
+		std::vector<int>::iterator it;
+
+		it = easyfind(v, 6);
 		std::cout << "Find : " << *it << std::endl;
-	else
-		std::cout << "Integer given not found" << std::endl;
+
+		it = easyfind(v, 2);
+		std::cout << "Find : " << *it << std::endl;
+
+		it = easyfind(v, 5);
+		std::cout << "Find : " << *it << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	
-	it = easyfind(v, 8);
-	if (it != v.end())
-		std::cout << "Find : " << *it << std::endl;
-	else
-		std::cout << "Integer given not found" << std::endl;
-	
-	it = easyfind(v, 2);
-	if (it != v.end())
-		std::cout << "Find : " << *it << std::endl;
-	else
-		std::cout << "Integer given not found" << std::endl;
+
+
 	return 0;
 }
